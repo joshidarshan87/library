@@ -1,0 +1,83 @@
+/*
+    Created on : 22 Dec, 2014, 6:19:59 PM
+    Author     : Designer-PC
+*/
+.logo-text{
+    font-size:2.6em !important;
+}
+.tagline{
+    color: #faca3a;
+    font-size: 1.25em;
+    letter-spacing: 1px;
+    padding-top: 3px;
+}
+
+.gallery-thumb-inner{
+    overflow: hidden;
+    float: left;
+    margin-left: 3%;
+    /*width: 30%;*/
+    display: inline-block;
+    margin-bottom: 3%;
+    -moz-transition: all 150ms ease-in-out;
+    -o-transition: all 150ms ease-in-out;
+    -webkit-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
+}
+
+nav ul.sf-menu ul > li.active a{
+    color: #faca3a!important;
+}
+
+#figuretable{
+
+}
+
+.dog-bg{
+    background-image: url(/animalhelpline_CI/asset/images/dog.jpg);
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    /* background-size: contain; */
+    background-position: bottom right;
+    height: 384px;
+}
+
+.service-item p{
+    text-align: justify;
+}
+
+.goog-te-gadget-simple{
+    background-color: #608358!important;
+    padding: 6px !important;
+    border: none !important;
+}
+
+.goog-te-gadget-simple .goog-te-menu-value{
+    color: #fff!important;
+}
+
+.goog-te-gadget-icon{
+    display: none !important;
+}
+
+.sidebar-gallery{
+    height: 80px;
+    width: 80px;
+}
+
+.main-gallery{
+    height: 150px;
+    width: 2500px;
+}
+
+.media-gallery{
+    height: 150px;
+    width: 2500px;
+    border:1px solid #ccc;
+}
+
+.down-image{
+    height: 320px !important;
+    width: 255px !important;
+}
+

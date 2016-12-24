@@ -1,0 +1,51 @@
+//
+// Variables
+//-----------------------------------------------
+
+// Imports
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700,800,900);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100);
+
+// Base colors
+$primary_color: #6B9262;
+$accent_color: #FACA3A;
+$white_color: #fff;
+$light_color: #eee;
+$notice_button_color: #f15354;
+$black_color: #000;
+
+// Background Colors
+$light_bg_color: #efefef;
+$darken_primary_color: darken($primary-color, 5%);
+
+$footer_bg_color: #292b27;
+$footer_second_bg: darken($footer_bg_color, 3%);
+
+// Text Color
+$heading_color: #232323;
+$light_text_color: #aaa;
+$body_text_color: #777;
+$header_color: lighten($primary_color, 30%);
+
+
+//Footer Text colors
+$footer_text_color: #d0e0ae;
+$footer_link_color: #fff;
+
+// Border Colors
+$border_color: #ddd;
+$header_border_color: lighten($primary-color, 15%);
+
+
+// Font family variables
+$heading_font: 'Roboto', Helvetica, Arial, Heveltica Neue, sans-serif;
+$body_font: Helvetica, Arial, Heveltica Neue, sans-serif;
+$quote_font: 'Roboto Slab', serif;
+
+
+$break-small: 768px;
+$break-medium: 992px;
+$break-large: 1200px;
+
+
+$error_color: #e64343;

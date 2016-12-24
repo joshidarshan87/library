@@ -1,0 +1,67 @@
+/*------------------------------------------------------------------
+[ Master Stylesheet ]
+
+Project:	ICARE - Nonprofit, Fundraising HTML Template
+Version:	1.0
+Last change:	06/13/14
+-------------------------------------------------------------------*/
+
+
+// Import compass library
+@import "compass";
+
+// Import variables, mixins and placeholders
+@import "partials/variables";
+@import "partials/mixins";
+
+
+
+/*------------------------------------------------------------------
+[ Table of contents ]
+
+1. General (Rest, Typography)
+2. Header (Menu, Social Icons, Search Form)
+3. Content (Blog, Causes, Sidebar)
+4. Footer
+5. Misc (Plugins styling)
+
+-------------------------------------------------------------------*/
+
+
+// Import base and general styles (layout, links, typography, forms, buttons, navigation etc)
+/*------------------------------------------------------------------
+[ 1. GENERAl ]
+-------------------------------------------------------------------*/
+@import "partials/placeholders";
+@import "partials/base"; // typography, links, forms and buttons
+@import "partials/general"; // general layout strucuture
+
+
+/*------------------------------------------------------------------
+[ 2. HEADER ]
+-------------------------------------------------------------------*/
+@import "partials/header"; // header styles
+
+
+/*------------------------------------------------------------------
+[ 3. CONTENT ]
+-------------------------------------------------------------------*/
+@import "partials/content"; //main content styles
+@import "partials/slider"; // header styles
+@import "partials/sidebar"; // sidebar styles
+
+
+/*------------------------------------------------------------------
+[ 4. FOOTER ]
+-------------------------------------------------------------------*/
+@import "partials/footer"; // footer styles
+
+
+/*------------------------------------------------------------------
+[ 5. MISC ]
+-------------------------------------------------------------------*/
+// Import misc and plugins styles
+@import "partials/misc";
+
+// Import wp specific styles
+@import "partials/wp";

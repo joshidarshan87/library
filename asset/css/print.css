@@ -1,0 +1,247 @@
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+
+@page {
+    size: A4;
+    margin: 0;
+}
+@media print {
+    html, body {
+        width: 210mm;
+        height: 297mm;
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+    }
+    .invoice-wrapper {
+        width: 210mm;
+        height: 297mm;
+        background: #fff;
+        position: relative;
+        border:1px solid #222;
+    }
+    .invoice{
+        position: absolute;
+        left: 15px;
+        right: 15px;
+        top: 15px;
+        bottom: 15px;
+        border: 4px solid #fe8d4f;
+        background:  url('view/template/images/back.jpg');
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+    header{
+        height: 200px;
+        width: 100%;
+        padding: 5px;
+    }
+    .top-numbers{
+        font-size: 13px;
+    }
+
+    .top-numbers .ls{
+        color: #6d6493;
+    }
+
+    .top-numbers .reg{
+        color: #fe8d4f;
+        font-weight: bold;
+        font-size: 20px;
+        padding: 2px;
+    }
+    .top-numbers .half{
+        width: 370px;
+        float: left;
+    }
+    .ls{
+        text-align: left;
+    }
+    .rs{
+        text-align: right;
+    }
+    nav{
+        background: #fbdb6e;
+        border-top: 2px solid #000;
+        border-bottom: 2px solid #000;
+        overflow: auto;
+        padding: 4px;
+    }
+
+    main{
+        margin: 25px 0px;
+    }
+
+    header h1{
+        color: #fe654f;
+        text-align: center;
+        letter-spacing: 2px;
+    }
+
+    header i.fa{
+        color: #4c90c1;
+    }
+    .clear{
+        float: none;
+        clear: both;
+    }
+
+    header h2{
+        color: #fe654f;
+        text-align: center;
+        margin: 0;
+    }
+
+    header h4{
+        color: #a76a96;
+        text-align: center;
+        margin: 0;
+        padding: 10px;
+    }
+
+    .top-numbers .office,.top-numbers .contact{
+        color: #000;
+        font-size: 12px
+    }
+
+    .thanks{
+        color: #4c90c1;
+        text-decoration: underline;
+        text-align: center;
+        margin: 5px;
+    }
+
+    .top-numbers .id,.top-numbers .date{
+        color: #000;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 1.5;
+        padding: 2px;
+    }
+
+    section{
+        overflow: auto;
+    }
+
+    .containt p:nth-child(1){
+        font-size: 18px;
+        color: #f17156;
+        line-height: 2;
+        padding: 5px 20px 0px;
+    }
+
+    .containt p:nth-child(2){
+        font-size: 18px;
+        color: #f17156;
+        line-height: 2;
+        text-indent: 1.5em;
+        padding: 5px 20px 0px;
+    }
+
+    .containt p:nth-child(3){
+        font-size: 18px;
+        color: #f17156;
+        line-height: 2;
+        text-indent: 1.5em;
+        padding: 5px 20px 0px;
+    }
+
+    .words{
+        color: #5772a5;
+        text-align: left;
+        padding-left: 20px;
+        font-weight: bold;
+    }
+
+    .ammount{
+        margin: 20px;
+        border: 1px solid #ef6150;
+        display: inline-block;
+        float: left;
+        padding: 10px 20px;
+        font-size: 22px;
+        position: relative;
+        padding-left: 70px;
+    }
+
+    .datemain{
+        margin: 20px;
+        border: 1px solid #ef6150;
+        display: inline-block;
+        float: left;
+        padding: 10px 20px;
+        font-size: 22px;
+        position: relative;
+    }
+
+    .sign{
+        margin: 20px;
+        border: 1px solid #ef6150;
+        display: inline-block;
+        float: left;
+        padding: 10px 20px;
+        font-size: 22px;
+        position: relative;
+        width: 240px;
+    }
+
+    .sign .karuna{
+        position: absolute;
+        bottom: -28px;
+        font-size: 9px;
+        right: 0;
+    }
+
+    .ammount i{
+        position: absolute;
+        background: #ef6150;
+        top: 0;
+        left: 0;
+        height: 100%;
+        padding: 0px 20px;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 50px;
+        color: #fff;
+    }
+
+    footer{
+        overflow: auto;
+        height: 200px;
+        margin-top: 45px;
+    }
+
+    footer .tag{
+        background: #4b9ad3;
+        padding: 12px;
+        color: #fff;
+        text-align: center;
+    }
+
+    footer h4{
+        color: #a278a5;
+        text-align: center;
+    }
+
+    footer p{
+        color: #f17298;
+        text-align: center;
+        font-size: 15px;
+        text-transform: uppercase;
+    }
+
+    footer p span{
+        color: #705e8e;
+        font-weight: bold;
+    }
+
+    footer .links{
+        color: #f17298;
+        text-align: center;
+        text-transform: lowercase;
+        font-size: 12px;
+    }
+
+    .mainDetails{
+        margin-top: 20px;
+    }
+}
