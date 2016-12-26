@@ -27,7 +27,7 @@
                                 <th>Image</th>
                                 <th>Book</th>
                                 <th>ISBN No.</th>
-                                <th>Quantity</th>
+                                <th>Total Quantity</th>
                                 <th>Price</th>
                                 <th>Department</th>
                                 <th>Edit</th>
@@ -45,6 +45,12 @@
                                     <td><?= $value['quantity'] ?></td>
                                     <td><?= $value['price'] ?></td>
                                     <td><?= $value['department_name'] ?></td>
+                   
+                                   <?php //$count_row=$this->db->get_where('issue_book',array('book_id'=>$value['book_id'],'status'=>1))->result_array();?>
+                                    <?php //$issue_quantity = count($count_row);?>
+                                    <?php //$avail_quan = $value['quantity']-$issue_quantity;?>
+                                   <!--<td> <?php //echo $avail_quan;?></td>-->
+                                    <?php //$this->db->update('book_quantity',array('availabel_quantity'=>$avail_quan),array('book_id'=>$value['book_id']));?>
                                     <td><a href="<?= base_url(); ?>admin/book/edit/<?= $value['book_id'] ?>">Edit</a></td>
                                     <td><a href="<?= base_url(); ?>admin/book/delete/<?= $value['book_id'] ?>" onclick="return confirm('Are you Sure');">Delete</a></td>
                                 </tr>

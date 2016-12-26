@@ -24,7 +24,6 @@ class Book extends CI_Controller {
     }
 
     public function add() {
-        var_dump($_POST);
         $this->form_validation->set_rules('bookname', 'Book Name', 'required');
         $this->form_validation->set_rules('ISBN_no', 'ISBN No', 'required');
         $this->form_validation->set_rules('quantity', 'Quantity', 'required');
@@ -111,7 +110,7 @@ class Book extends CI_Controller {
                 $_POST['imageUrl'] = 'uploads/' . $this->upload->data('file_name');
             }
         }
-        var_dump($_POST);
+        
         $this->book_model->update($_POST, $book_id);
         redirect('admin/book/index');
     }

@@ -9,7 +9,7 @@ class Publication_model extends CI_Model {
     }
 
     public function insert($data) {
-        $this->db->insert('publication', array('name' => $data['publication_name']));
+        $this->db->insert('publication', array('publication_name' => $data['publication_name']));
     }
 
     public function select() {
@@ -21,7 +21,7 @@ class Publication_model extends CI_Model {
     }
 
     public function update($publication_id, $data) {
-        $this->db->update('publication', array('name' => $data['publication_name']), array('publication_id' => $publication_id));
+        $this->db->update('publication', array('publication_name' => $data['publication_name']), array('publication_id' => $publication_id));
     }
 
     public function delete($publication_id) {

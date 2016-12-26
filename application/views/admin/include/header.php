@@ -13,9 +13,14 @@
         <title><?php echo $page_title ?></title>
 
         <link rel="stylesheet" href="<?php echo base_url(); ?>asset/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="<?php echo base_url(); ?>asset/bootstrap/css/bootstrap-theme.min.css">
+        <!--<link rel="stylesheet" href="<?php echo base_url(); ?>asset/bootstrap/css/bootstrap-theme.min.css">-->
+        <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap-theme.min.css">
+       
         <!--<link rel="stylesheet" href="<?php echo base_url(); ?>asset/bootstrap/css/jquery.fancybox.css">-->
-        <script src="<?php echo base_url(); ?>asset/js/jquery-1.10.2.min.js"></script>
+        <!--<script src="<?php echo base_url(); ?>asset/js/jquery-1.10.2.min.js"></script>-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        
+        <script> var base_url = "<?php echo base_url(); ?>"</script>
         <style>
             /*
  * Base structure
@@ -163,6 +168,11 @@
                     <ul class="nav nav-sidebar">
                         <li>
                             <a href="<?= base_url('admin/Issue_Book/add'); ?>"><i class="glyphicon glyphicon-envelope"></i> Issue Book</a>
+                        </li>
+                    </ul>
+                     <ul class="nav nav-sidebar">
+                        <li>
+                            <a href="<?= base_url('admin/Search/index'); ?>"><i class="glyphicon glyphicon-envelope"></i> Search Book</a>
                         </li>
                     </ul>
 

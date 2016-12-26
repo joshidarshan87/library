@@ -10,7 +10,8 @@ class Issue_Book extends CI_Controller {
         $this->load->library('form_validation');
         $this->load->model('user_model');
         $this->load->model('book_model');
-       
+        $this->load->model('book_quantity');
+     
     }
 
     public function index() {
@@ -22,6 +23,7 @@ class Issue_Book extends CI_Controller {
     }
 
     public function add() {
+      //  $this->output->enable_profiler();
         $this->form_validation->set_rules('username', 'User', 'required');
         $this->form_validation->set_rules('bookname', 'Book', 'required');
         if ($this->form_validation->run() == FALSE) {
@@ -33,7 +35,9 @@ class Issue_Book extends CI_Controller {
             );
             $this->load->view('admin/template', $data);
         } else {
-            $this->issue_Book_model->insert($_POST);
+          $result=$this->issue_Book_model->insert($_POST);
+          $this->book_quantity->update_book_qty($result,$_POST);
+          redirect('admin/book/index');
         }
     }
 

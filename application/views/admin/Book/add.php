@@ -56,7 +56,7 @@
                                 <label>Publication Name</label>
                                 <select name="publication_name" class="form-control">
                                     <?php foreach ($get_publication as $key => $value): ?>
-                                        <option value="<?= $value['publication_id'] ?>"><?= $value['name'] ?></option>
+                                        <option value="<?= $value['publication_id'] ?>"><?= $value['publication_name'] ?></option>
                                     <?php endforeach; ?>
                                 </select>
                             </div>
