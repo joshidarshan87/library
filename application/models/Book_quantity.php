@@ -14,5 +14,9 @@ class Book_quantity extends CI_Model{
     $this->db->update('book_quantity',array('availabel_quantity'=>$qty),array('book_id'=>$data['bookname']));
    }
    
+   public function update_book_by_user($availabel_qty,$book_id){
+      $this->db->update('book_quantity',array('availabel_quantity'=>$availabel_qty),array('book_id'=>$book_id)); 
+   }
+   
 }
 ?>

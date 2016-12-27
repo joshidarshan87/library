@@ -59,11 +59,17 @@ class Book_model extends CI_Model {
         
         $this->db->select('*');
         $this->db->from('book');
+        $this->db->join('publication','book.publication_id=publication.publication_id');
+        $this->db->join('author', 'book.author_id=author.author_id');
+        $this->db->join('book_quantity','book.book_id=book_quantity.book_id');
         $this->db->like('name',$search,'both');
+        $this->db->or_like('publication.publication_name',$search,'both');
+        $this->db->or_like('author.firstname',$search,'both');
        return $this->db->get()->result_array();
     
-
     }
+    
+    
 
 }
 ?>

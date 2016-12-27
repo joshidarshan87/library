@@ -25,7 +25,7 @@ class User extends CI_Controller {
                     'user_id' => $query['user_id']
                 );
                 $this->session->set_userdata($user);
-                echo "hello";
+                redirect('dashboard');
             } else {
                 $data['msg'] = "Invalid UserName or Password";
                 $this->load->view('site/signin', $data);
