@@ -22,11 +22,16 @@ class Search extends CI_Controller{
     
  
     public function index(){
+        $admin_id = $this->session->userdata('admin_id');
+        if(!empty($admin_id)){
         $data=array(
            'page_title'=>'search',
             'page_name'=>'search/index',   
         );
          $this->load->view('admin/template',$data);
+    }else{
+         redirect('admin/Login');
+    }
     }
 
     public function autosearch($search){

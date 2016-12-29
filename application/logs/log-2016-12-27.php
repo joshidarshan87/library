@@ -153,3 +153,10 @@ ERROR - 2016-12-27 19:36:18 --> 404 Page Not Found: User_asset/images
 ERROR - 2016-12-27 19:36:18 --> 404 Page Not Found: User_asset/images
 ERROR - 2016-12-27 19:36:58 --> 404 Page Not Found: User_asset/images
 ERROR - 2016-12-27 19:36:58 --> 404 Page Not Found: User_asset/images
+ERROR - 2016-12-27 20:03:31 --> 404 Page Not Found: Assets/metisMenu
+ERROR - 2016-12-27 20:03:31 --> 404 Page Not Found: Assets/dist
+ERROR - 2016-12-27 20:03:31 --> 404 Page Not Found: Assets/metisMenu
+ERROR - 2016-12-27 20:03:31 --> 404 Page Not Found: Assets/font_awesome
+ERROR - 2016-12-27 20:03:31 --> 404 Page Not Found: Assets/dist
+ERROR - 2016-12-27 20:03:31 --> 404 Page Not Found: Assets/metisMenu
+ERROR - 2016-12-27 20:03:31 --> 404 Page Not Found: Assets/dist

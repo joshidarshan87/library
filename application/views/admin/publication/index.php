@@ -34,7 +34,7 @@
                             <?php foreach ($result as $key => $value): ?>
                                 <tr>
                                     <td><?= $i = $i + 1; ?></td>
-                                    <td><?= $value['name']; ?></td>
+                                    <td><?= $value['publication_name']; ?></td>
                                     <td><a href="<?= base_url(); ?>admin/publication/edit/<?= $value['publication_id'] ?>">Edit</a></td>
                                     <td><a href="<?= base_url(); ?>admin/publication/delete/<?= $value['publication_id'] ?>" onclick="return confirm('Are you Sure');">Delete</a></td>
                                 </tr>

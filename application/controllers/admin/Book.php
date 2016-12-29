@@ -15,15 +15,22 @@ class Book extends CI_Controller {
     }
 
     public function index() {
+         $admin_id = $this->session->userdata('admin_id');
+         if(!empty($admin_id)){
         $data = array(
             'page_title' => 'Book',
             'page_name' => 'book/index',
             'result' => $this->book_model->select()
         );
         $this->load->view('admin/template', $data);
+    }else{
+     redirect('admin/Login');
+    }
     }
 
     public function add() {
+        $admin_id = $this->session->userdata('admin_id');
+        if(!empty($admin_id)){
         $this->form_validation->set_rules('bookname', 'Book Name', 'required');
         $this->form_validation->set_rules('ISBN_no', 'ISBN No', 'required');
         $this->form_validation->set_rules('quantity', 'Quantity', 'required');
@@ -60,6 +67,9 @@ class Book extends CI_Controller {
                 redirect('admin/book/index');
             }
         }
+    }else{
+      redirect('admin/Login');  
+    }
     }
 
     public function edit($book_id) {
@@ -116,8 +126,13 @@ class Book extends CI_Controller {
     }
 
     public function delete($book_id) {
+      $admin_id = $this->session->userdata('admin_id');
+      if(!empty($admin_id)){
         $this->book_model->delete($book_id);
         redirect('admin/book/index');
+    }else{
+       redirect('admin/Login');   
+    }
     }
 
 }

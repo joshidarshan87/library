@@ -6,6 +6,7 @@
         </div>
         <!-- /.col-lg-12 -->
     </div>
+
     <!-- /.row -->
     <div class="row">
         <div class="col-lg-12">
@@ -17,11 +18,11 @@
                     <div class="row">
                         <div class="col-md-6">
                             <label>Search</label>
-                            <input type="text" name="search" id="search" onkeyup="dosearch()" class="form-control">
-                            <br/>
-                            <p id="bookname"></p>
-                        </div>
-                    </div>
+                            <input type="text" name="search" id="search" class="form-control" onkeyup="dosearch();" placeholder="Enter UserID">
+                         <br/>
+                          <p id="bookname"></p>
+                        </div>                      
+                    </div>                    
                 </div>
                 <!-- /.panel-body -->
             </div>
@@ -34,13 +35,13 @@
 <!-- /#page-wrapper -->
 
 <script>
-   function dosearch(){
+ function dosearch(){
        var book_name="";
+       
     var search =  $("#search").val();
-   
     $.ajax({
        type: 'GET',
-       url: base_url+"search/autosearch/"+search,
+       url: base_url+"admin/Renewbook/search/"+search,
        dataType: 'json',
        success: function (result) {
            
@@ -48,29 +49,25 @@
       //console.log(result[x].name);
      book_name +="<div class='row bg-success' style='margin-left: 4px;'>"+
              "<div class='col-md-6'>"+
+             "<h4> Book ID:"+ " "+result[x].book_id+"</h4>"+
              "<h4> Book Name:"+ " "+result[x].name+"</h4>"+
-             "<p> Price:"+" "+result[x].price+"</p>"+
-             "<p> ISBN No:"+" "+result[x].ISBN_no+"</p>"+
-             "<p> Edition:"+" "+result[x].edition+"</p>"+
-             "<p> Publication:"+" "+result[x].publication_name+"</p>"+
-             "<p> Author:"+" "+result[x].firstname+" "+result[x].lastname+"</p>"+
+             "<h4> USER ID:"+ " "+result[x].user_id+"</h4>"+
+             "<h4> USER Name:"+ " "+result[x].firstname+ " "+result[x].lastname+"</h4>"+
              "</div>"+
              
              "<div class='col-md-6'>"+
-             "<p> Total Quantity:"+" "+result[x].quantity+"</p>"+
-             "<p> Availabel Quantity:"+" "+result[x].availabel_quantity+"</p>"+
-             "<img src='"+base_url+result[x].image_url+"' style='height:100px;width:100px;'>"+
-             "</div>"+
+             "<h4> Issue Date:"+" "+result[x].issue_date+"</h4>"+
+             "<h4> Return Date:"+" "+result[x].renew_date+"</h4>"+
              "<br/>"+
-             "<div class='col-md-3'>"+
-             "<br/>"+
+             "<a href='"+base_url+"admin/Renewbook/return_book/"+result[x].user_id+"/"+result[x].book_id+"'>Return</a>"+ "&nbsp;" + "|"+ "&nbsp;" + "<a href='"+base_url+"admin/Renewbook/renew_book/"+result[x].user_id+"/"+result[x].book_id+"'>Renew</a>"+
+             
              "</div>"+
              "</div>"+"<br/>";
-
           }
          $("#bookname").html(book_name);
         }
     });
+ 
    }
 </script>
     

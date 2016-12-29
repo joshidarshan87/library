@@ -22,7 +22,7 @@ class User extends CI_Controller {
                 $user = array(
                     'email' => $query['email'],
                     'password' => $query['password'],
-                    'user_id' => $query['user_id']
+                    'user_id' => $query['user_id'],
                 );
                 $this->session->set_userdata($user);
                 redirect('dashboard');
@@ -50,6 +50,11 @@ class User extends CI_Controller {
             $this->user_model->insert($_POST);
             redirect('user/signin');
         }
+    }
+    
+    public function logout(){
+        $this->session->sess_destroy();
+        redirect('user/signin');
     }
 
 }

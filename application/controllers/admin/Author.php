@@ -11,15 +11,22 @@ class Author extends CI_Controller {
     }
 
     public function index() {
+        $admin_id = $this->session->userdata('admin_id');
+        if(!empty($admin_id)){
         $data = array(
             'page_title' => 'Author',
             'page_name' => 'author/index',
             'result' => $this->author_model->select()
         );
         $this->load->view('admin/template', $data);
+    }else{
+        redirect('admin/Login');
+    }
     }
 
     public function add() {
+        $admin_id = $this->session->userdata('admin_id');
+        if(!empty($admin_id)){
         $this->form_validation->set_rules('firstname', 'First Name', 'required');
         $this->form_validation->set_rules('lastname', 'Last Name', 'required');
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
@@ -33,9 +40,14 @@ class Author extends CI_Controller {
             $this->author_model->insert($_POST);
             redirect('admin/author/index');
         }
+    }else{
+        redirect('admin/Login');
+    }
     }
 
     public function edit($author_id) {
+         $admin_id = $this->session->userdata('admin_id');
+         if(!empty($admin_id)){
         $this->form_validation->set_rules('firstname', 'First Name', 'required');
         $this->form_validation->set_rules('lastname', 'Last Name', 'required');
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
@@ -51,11 +63,19 @@ class Author extends CI_Controller {
             $this->author_model->update($author_id, $_POST);
             redirect('admin/author/index');
         }
+    }else{
+        redirect('admin/Login'); 
+    }
     }
 
     public function delete($author_id) {
+        $admin_id = $this->session->userdata('admin_id');
+        if(!empty($admin_id)){
         $this->author_model->delete($author_id);
         redirect('admin/author/index');
+        }else{
+           redirect('admin/Login');  
+        }
     }
 
 }

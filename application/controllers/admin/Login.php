@@ -24,7 +24,7 @@ class Login extends CI_Controller {
                     'admin_id' => $query['admin_id']
                 );
                 $this->session->set_userdata($user);
-                // redirect();
+                redirect('admin/dashboard');
             } else {
                 $data['msg'] = "Invalid UserName or Password";
                 $this->load->view('admin/login', $data);

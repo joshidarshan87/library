@@ -23,9 +23,14 @@ class Search extends CI_Controller{
     }
     
     public function autosearch($search){
+      $user_id= $this->session->userdata('user_id');
+      if(!empty($user_id)){
       $result = $this->book_model->autosearch($search);
       echo json_encode($result);
+    }else{
+        redirect('user/signin');
     }
+   }
     
     
 }

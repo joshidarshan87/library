@@ -260,13 +260,14 @@
                             <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-user">
-<!--                            <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                            <?php $email=$this->session->userdata('email');  ?>
+                            <li><a href="#"><i class="fa fa-user fa-fw"></i><?= $email;?></a>
                             </li>
-                            <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                            </li>
-                            <li class="divider"></li>
-                            <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+<!--                            <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                             </li>-->
+                            <li class="divider"></li>
+                            <li><a href="<?= base_url()?>user/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                            </li>
                         </ul>
                         <!-- /.dropdown-user -->
                     </li>
@@ -290,8 +291,6 @@
                             </li>
                             <li><a href="<?= base_url()?>dashboard"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a></li>
                             <li><a href="<?= base_url()?>search"><i class="fa fa-dashboard fa-fw"></i> Search Book</a></li>
-                            <li><a href="<?= base_url()?>renewbook"><i class="fa fa-dashboard fa-fw"></i> Renew Book</a></li>
-                           
                         </ul>
                     </div>
                     <!-- /.sidebar-collapse -->
