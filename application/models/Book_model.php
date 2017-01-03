@@ -69,6 +69,37 @@ class Book_model extends CI_Model {
     
     }
     
+    public function record_count(){
+        return $this->db->count_all("book");
+    }
+    
+    public function select2($limit,$id){
+        //$this->db->limit($limit,$id);
+       //return $this->db->get('book')->result_array();
+      $this->db->select('*');
+        $this->db->from('book');
+        $this->db->join('department', 'book.department_id=department.department_id');
+        $this->db->limit($limit,$id);
+        return $this->db->get()->result_array();
+    }
+    
+    public function autocomplete($searchterm){
+        $this->db->select('*');
+        $this->db->from('book');
+        $this->db->like('name',$searchterm,'both');
+        return $this->db->get()->result_array();
+      
+    }
+    
+    public function get_book_detail($book_id){
+        $this->db->select('*');
+        $this->db->from('book');
+        $this->db->join('publication','book.publication_id=publication.publication_id');
+        $this->db->join('author', 'book.author_id=author.author_id');
+        $this->db->join('book_quantity', 'book.book_id=book_quantity.book_id');
+        $this->db->where('book.book_id',$book_id);
+        return $this->db->get()->row_array();
+    }
     
 
 }

@@ -31,8 +31,6 @@ class Issue_Book_model extends CI_Model {
     return $avilabel_qty;
     }
     
-    
-
 //    public function insert_book_by_user($book_id,$user_id){
 //      $issue_date = date('Y-m-d');
 //      $renew_date = date('Y-m-d',strtotime($issue_date . "+1 days"));
@@ -101,11 +99,18 @@ class Issue_Book_model extends CI_Model {
    $available_qty= $book_qty['availabel_quantity']+$renew_qty;
    
    $this->db->update('book_quantity',array('availabel_quantity'=>$available_qty),array('book_id'=>$book_id));
-  
    
     }
     
-   
+    public function book_history_by_user($user_id){
+        $this->db->select('*');
+        $this->db->from('issue_book');
+        $this->db->join('book','issue_book.book_id=book.book_id');
+        $this->db->where('issue_book.user_id',$user_id);
+        $this->db->where('issue_book.status',1);
+        return $this->db->get()->result_array();
+                
+    }
 
 }
 

@@ -25,19 +25,29 @@
         <link href="<?= base_url();?>user_asset/morrisjs/morris.css" rel="stylesheet">
         
     <!-- DataTables CSS -->
-    <link href="<?= base_url();?>user_asset/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+    <!--<link href="<?= base_url();?>user_asset/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">-->
 
     <!-- DataTables Responsive CSS -->
-    <link href="<?= base_url();?>user_asset/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+    <!--<link href="<?= base_url();?>user_asset/datatables-responsive/dataTables.responsive.css" rel="stylesheet">-->
     
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <!--<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">-->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
     
         <!-- Custom Fonts -->
         <link href="<?= base_url();?>user_asset/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <script> var base_url = "<?php echo base_url(); ?>"</script>
+        
+<!--    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js" type="text/javascript"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.min.js" type="text/javascript"></script>
+    <link href=" http://static.jquery.com/ui/css/demo-docs-theme/ui.theme.css" rel="stylesheet">
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/themes/base/jquery-ui.css" rel="stylesheet">-->
+     
 
+        <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css" type="text/css" /> 
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/ui/1.10.1/jquery-ui.min.js"></script>
+        
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -291,6 +301,8 @@
                             </li>
                             <li><a href="<?= base_url()?>dashboard"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a></li>
                             <li><a href="<?= base_url()?>search"><i class="fa fa-dashboard fa-fw"></i> Search Book</a></li>
+                            <li><a href="<?= base_url()?>book_history"><i class="fa fa-dashboard fa-fw"></i>Issue Book History</a></li>
+                            <li><a href="<?= base_url()?>user/logout"><i class="fa fa-dashboard fa-fw"></i>Logout</a></li>
                         </ul>
                     </div>
                     <!-- /.sidebar-collapse -->

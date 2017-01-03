@@ -11,21 +11,39 @@ class Book extends CI_Controller {
         $this->load->model('department_model');
         $this->load->model('publication_model');
         $this->load->model('author_model');
+        $this->load->library("pagination");
         //  $this->load->helper('file');
+      
     }
 
-    public function index() {
-         $admin_id = $this->session->userdata('admin_id');
-         if(!empty($admin_id)){
-        $data = array(
+       public function index(){
+        $admin_id = $this->session->userdata('admin_id');
+        if(!empty($admin_id)){
+            $config = array();
+            $config["base_url"] = base_url() . "admin/Book/index";
+            $total_row = $this->book_model->record_count();
+            $config["total_rows"] = $total_row;
+            $config["per_page"] = 1;
+            $config["uri_segment"] = 4;
+            $config['num_links'] = $total_row;
+            $config['cur_tag_open'] = '&nbsp;<a class="current">';
+            $config['cur_tag_close'] = '</a>';
+            $config['next_link'] = 'Next';
+            $config['prev_link'] = 'Previous';
+            $this->pagination->initialize($config);
+            $page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+           
+          $data = array(
             'page_title' => 'Book',
             'page_name' => 'book/index',
-            'result' => $this->book_model->select()
+            'result' => $this->book_model->select2($config["per_page"],$page)
         );
+        $data["links"] = $this->pagination->create_links();
         $this->load->view('admin/template', $data);
-    }else{
-     redirect('admin/Login');
-    }
+        }else{
+           redirect('admin/Login');     
+        }
+        
     }
 
     public function add() {
@@ -133,6 +151,14 @@ class Book extends CI_Controller {
     }else{
        redirect('admin/Login');   
     }
+    }
+    
+    public function autocomplete(){
+       $search = $this->input->post('search');
+      $result= $this->book_model->autosearch($search);
+      echo json_encode($result);
+       
+       
     }
 
 }

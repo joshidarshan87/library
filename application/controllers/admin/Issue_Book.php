@@ -39,6 +39,8 @@ class Issue_Book extends CI_Controller {
        redirect('admin/Login');
     }
     }
+    
+   
 }
 
 ?>

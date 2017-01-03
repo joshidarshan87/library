@@ -71,7 +71,7 @@
                                             $is_selected = 'selected';
                                         }
                                         ?>
-                                        <option value="<?= $value['publication_id'] ?>" <?php echo $is_selected; ?>><?= $value['name'] ?></option>
+                                        <option value="<?= $value['publication_id'] ?>" <?php echo $is_selected; ?>><?= $value['publication_name'] ?></option>
                                     <?php endforeach; ?>
                                 </select>
                             </div>
