@@ -19,6 +19,21 @@ class User_model extends CI_Model {
     public function select() {
         return $this->db->get('user')->result_array();
     }
+    
+    public function get_user_profile($user_id){
+        $this->db->select('*');
+        $this->db->from('user');
+        $this->db->where('user_id',$user_id);
+       return $this->db->get()->row_array();
+    }
+    
+    public function update($data,$user_id){
+        $this->db->update('user',array('firstname'=>$data['firstname'],'lastname'=>$data['lastname'],'birthday'=>$data['birthday'],'address'=>$data['address'],'city'=>$data['city'],'phone'=>$data['phone']),array('user_id'=>$user_id));
+    }
+    
+    public function delete($user_id){
+        $this->db->delete('user',array('user_id'=>$user_id));
+    }
 
 }
 

@@ -297,6 +297,7 @@
                             <li><a href="<?= base_url('admin/book'); ?>"><i class="fa fa-dashboard fa-fw"></i> Book</a></li>
                             <li><a href="<?= base_url('admin/Issue_Book/add'); ?>"><i class="fa fa-dashboard fa-fw"></i> Issue Book</a></li>
                             <li><a href="<?= base_url('admin/Renewbook'); ?>"><i class="fa fa-dashboard fa-fw"></i> Renew/Return Book</a></li>
+                            <li><a href="<?= base_url('admin/user');?>"><i class="fa fa-dashboard fa-fw"></i>User</a></li>
                            
                         </ul>
                     </div>

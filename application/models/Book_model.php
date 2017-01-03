@@ -101,6 +101,27 @@ class Book_model extends CI_Model {
         return $this->db->get()->row_array();
     }
     
+    public function get_book_count($search = NULL){
+       if ($search == "NIL") $search = "";
+      $this->db->select('*');
+      $this->db->from('book');
+      $this->db->like('name',$search,'both');
+    $result=$this->db->get()->result_array();
+    return count($result);
+
+    }
+    
+     function get_books($limit, $start, $st = NULL)
+        {
+        if ($st == "NIL") $st = "";
+        $this->db->select('*');
+        $this->db->from('book');
+        $this->db->join('department', 'book.department_id=department.department_id');
+        $this->db->like('name',$st,'both');
+        $this->db->limit($limit,$start);
+        return $this->db->get()->result_array();
+        }
+    
 
 }
 ?>

@@ -29,11 +29,17 @@
 
                 <!-- /.panel-heading -->
                 <div class="panel-body">
-                    <div class="form-grop col-md-2 col-md-offset-10">
-                        <input type="text" name="search" id="search" value="" class="form-control" placeholder="Search Book"> 
-                        <br/>
-                    </div>
-             
+                        <?= form_open('admin/book/search');?>
+                      <div class="row">
+                        <div class="col-md-3 col-md-offset-8">
+                            <input type="text" name="search" id="search" value="" class="form-control" placeholder="Search Book"> 
+                        </div>
+                        <div class="col-md-1">
+                            <input type="submit" name="submit" value="Search" class="btn btn-danger">  
+                        </div>
+                      </div>
+                        <?= form_close();?>
+                  <br/>
                     <table width="100%" class="table table-striped table-bordered table-hover" id="">
                         <thead>
                             <tr>
@@ -63,7 +69,7 @@
                             <?php endforeach;?>
                         </tbody>
                     </table>
-                    <ul class="pagination" style="margin-left: 90%">
+                    <ul class="pagination" style="margin-left: 80%">
                         <li><?= $links;?></li> 
                     </ul>
                     <br/>
@@ -80,28 +86,28 @@
 
 <script>
 $(document).ready(function (){
-$('#search').autocomplete({
-  minLength: 3,
-  source:function(request,response){
-     var book_name="";
-      $.ajax({
-         type: 'POST',
-         url: base_url+"admin/book/autocomplete",
-         data: {search:$("#search").val()},
-         dataType: 'json',
-         success: function (result) {
-                      for(x in result){
-                          book_name+="<table class='table table-striped table-bordered table-hover'>"+
-                                    "<tr>"+
-                                    "<td>"
-                                    "</tr>"+
-                                    "</table>";
-                      }
-                      $("#bookname").html(book_name);
-                    }
-      });
-  }  
-}); 
+//$('#search').autocomplete({
+//  minLength: 3,
+//  source:function(request,response){
+//     var book_name="";
+//      $.ajax({
+//         type: 'POST',
+//         url: base_url+"admin/book/autocomplete",
+//         data: {search:$("#search").val()},
+//         dataType: 'json',
+//         success: function (result) {
+//                      for(x in result){
+//                          book_name+="<table class='table table-striped table-bordered table-hover'>"+
+//                                    "<tr>"+
+//                                    "<td>"
+//                                    "</tr>"+
+//                                    "</table>";
+//                      }
+//                      $("#bookname").html(book_name);
+//                    }
+//      });
+//  }  
+//}); 
 });
 </script>
 

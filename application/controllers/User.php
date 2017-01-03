@@ -52,7 +52,46 @@ class User extends CI_Controller {
         }
     }
     
-    public function logout(){
+    public function profile(){
+      $user_id = $this->session->userdata('user_id');
+      if(!empty($user_id)){
+      $data=array(
+          'page_title'=>'Profile',
+          'page_name'=>'profile/profile',
+          'result'=>  $this->user_model->get_user_profile($user_id)
+      );  
+      $this->load->view('site/template',$data);
+    }else{
+          redirect('user/signin');
+    }
+    }
+
+    public function edit_profile($user_id){
+        $user_id = $this->session->userdata('user_id');
+        if(!empty($user_id)){
+        $this->form_validation->set_rules('firstname','First Name','required');
+        $this->form_validation->set_rules('lastname','Last Name','required');
+        $this->form_validation->set_rules('birthday','Birthday','required');
+        $this->form_validation->set_rules('address','Address','required');
+        $this->form_validation->set_rules('city','City','required');
+        $this->form_validation->set_rules('phone','Phone','required');
+       if($this->form_validation->run()==FALSE){
+       $data=array(
+           'page_title'=>'Edit Profile',
+           'page_name'=>'profile/edit_profile',
+           'result'=>  $this->user_model->get_user_profile($user_id)
+       );
+       $this->load->view('site/template',$data);
+    }else{
+        $this->user_model->update($_POST,$user_id);
+        redirect('user/profile');
+    }
+   }else{
+       redirect('user/signin');
+   }
+    }
+
+        public function logout(){
         $this->session->sess_destroy();
         redirect('user/signin');
     }

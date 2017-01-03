@@ -45,6 +45,31 @@ class Book extends CI_Controller {
         }
         
     }
+    
+    public function search(){
+        $search = ($this->input->post("search"))? $this->input->post("search") : "NIL";
+        $search = ($this->uri->segment(4)) ? $this->uri->segment(4) : $search;
+        $config = array();
+        $config['base_url']=  base_url()."admin/Book/search/$search";
+        $total_row = $this->book_model->get_book_count($search);
+        $config["total_rows"] = $total_row;
+        $config["per_page"] = 10;
+        $config["uri_segment"] = 4;
+        $config['num_links'] = $total_row;
+        $config['cur_tag_open'] = '&nbsp;<a class="current">';
+        $config['cur_tag_close'] = '</a>';
+        $config['next_link'] = 'Next';
+        $config['prev_link'] = 'Previous';
+        $this->pagination->initialize($config);
+        $page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+        $data=array(
+            'page_title' => 'Book',
+            'page_name'=>'book/index',
+            'result'=>$this->book_model->get_books($config["per_page"],$page,$search)
+        );
+        $data['links']=  $this->pagination->create_links();
+        $this->load->view('admin/template',$data);
+        }
 
     public function add() {
         $admin_id = $this->session->userdata('admin_id');

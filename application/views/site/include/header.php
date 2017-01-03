@@ -302,6 +302,7 @@
                             <li><a href="<?= base_url()?>dashboard"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a></li>
                             <li><a href="<?= base_url()?>search"><i class="fa fa-dashboard fa-fw"></i> Search Book</a></li>
                             <li><a href="<?= base_url()?>book_history"><i class="fa fa-dashboard fa-fw"></i>Issue Book History</a></li>
+                            <li><a href="<?= base_url()?>user/profile"><i class="fa fa-dashboard fa-fw"></i>Profile</a></li>
                             <li><a href="<?= base_url()?>user/logout"><i class="fa fa-dashboard fa-fw"></i>Logout</a></li>
                         </ul>
                     </div>
