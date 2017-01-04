@@ -74,7 +74,7 @@ class User extends CI_Controller{
     }
     }
 
-        public function delete($user_id){
+    public function delete($user_id){
         $admin_id = $this->session->userdata('admin_id');
         if(!empty($admin_id)){
         $this->user_model->delete($user_id);
@@ -82,6 +82,6 @@ class User extends CI_Controller{
     }else{
         redirect('admin/Login');
     }
-    }
+  }
 }
 ?>

@@ -119,11 +119,11 @@ select: function(event, ui){
                         alert('data not found');
                         location.href= base_url+"Search";     
                     }
-                 }
- });
+               }
+         });
  
-}
-});
+      } 
+  });
 
 }); 
     

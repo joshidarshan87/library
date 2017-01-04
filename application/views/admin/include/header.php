@@ -37,10 +37,17 @@
         <!-- Custom Fonts -->
         <link href="<?= base_url();?>user_asset/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <script> var base_url = "<?php echo base_url(); ?>"</script>
-
+        
+         <!---autocomplete--->
          <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css" type="text/css" /> 
         <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
         <script type="text/javascript" src="http://code.jquery.com/ui/1.10.1/jquery-ui.min.js"></script>
+        
+        <!---Date Picker---->
+        <link href=" https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+        
+       
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -298,7 +305,7 @@
                             <li><a href="<?= base_url('admin/Issue_Book/add'); ?>"><i class="fa fa-dashboard fa-fw"></i> Issue Book</a></li>
                             <li><a href="<?= base_url('admin/Renewbook'); ?>"><i class="fa fa-dashboard fa-fw"></i> Renew/Return Book</a></li>
                             <li><a href="<?= base_url('admin/user');?>"><i class="fa fa-dashboard fa-fw"></i>User</a></li>
-                           
+                            <li><a href="<?= base_url('admin/user_payment');?>"><i class="fa fa-dashboard fa-fw"></i>User Payment</a></li>
                         </ul>
                     </div>
                     <!-- /.sidebar-collapse -->
